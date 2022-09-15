@@ -33,6 +33,7 @@ int ft_printf(char const *cadena, ...)
     int size;
     int contador;
 
+    size = 0;
     contador = 0;
     va_list print;
     va_start (print, cadena); 
@@ -43,18 +44,14 @@ int ft_printf(char const *cadena, ...)
             contador++;
         }
         else
-        ft_putchar(cadena[contador]);
+        size = size + ft_putchar(cadena[contador]);
         contador++;
     }
     va_end (print);
     return (size);
 }
-/*int main()
-{
-    char *s1;
-    s1 = "hola";
-    ft_printf("%p", s1);
-    write(1, "\n", 1);
-    printf("%p", s1);
-    return 0;
-}*/
+// int main()
+// {
+//     printf("%x", 2147483647);
+//     return 0;
+// }

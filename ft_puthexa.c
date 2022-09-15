@@ -1,7 +1,7 @@
 
 #include "libftprintf.h"
 
-int	ft_puthexa(int n)
+unsigned int	ft_puthexa(unsigned int n)
 {
 	char *base;
 
@@ -16,17 +16,18 @@ int	ft_puthexa(int n)
 			ft_puthexa(n / 16);
 			n = n % 16;
 		}
+		n++;
 		ft_putchar(base[n]);
 	
 	return (n);
 }
 
-/*int main()
-{
+// int main()
+// {
 	
-	ft_puthexa(1065156);
-	printf("\n");
-	printf("%d", 1065156);
-	return (0);
+// 	ft_puthexa(-1065156);
+// 	printf("\n");
+// 	printf("%x", -1065156);
+// 	return (0);
 
-}*/
+// }

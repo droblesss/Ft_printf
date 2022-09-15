@@ -2,27 +2,27 @@
 #include <stdio.h>
 #include "libftprintf.h"
 
-int	ft_putadress(void *numero)
+unsigned int	ft_putadress(void *numero)
 {
-	int	i;
-	size_t			aux;
+	static int	i;
+	unsigned long long			aux;
 
 	i = 0;
-	aux = (size_t)numero;
-	i = write(1, "0x10", 4);
-	i = i + ft_puthexa(aux);
+	aux = (unsigned long long)numero;
+	i = write(1, "0x", 2);
+	i = i + ft_putnbrbase(aux, "0123456789abcdef");
 	return (i);
 }
-/*int main()
-{
-	void *hola;
+// int main()
+// {
+// 	void *hola;
 
-	hola = "holaquetal";
-	ft_putadress(hola);
-	printf("\n");
-	printf("%p",hola);
-	printf("\n");
-	printf("%x",(unsigned int) hola);
+// 	hola = 9223372036854775807L;
+// 	ft_putadress("%p", hola);
+// 	printf("\n");
+// 	printf("%p",hola);
+// 	printf("\n");
+// 	printf("%x",(unsigned int) hola);
 
-	return 0;
-}*/
+// 	return 0;
+// }

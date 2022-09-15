@@ -7,6 +7,7 @@ int	ft_putnbrbase(int numero, char *base)
 	static int	i;
 
 	i = 0;
+
 	if (numero > ft_strlen(base))
 	{
 		ft_putnbrbase(numero/ft_strlen(base), base);

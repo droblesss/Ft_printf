@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                            :+:      :+:    :+:   */
+/*   libftprintf.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 19:17:54 by drobles           #+#    #+#             */
-/*   Updated: 2022/09/08 16:48:27 by drobles          ###   ########.fr       */
+/*   Updated: 2022/09/15 12:22:04 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ int		ft_toupper(int c);
 int		ft_atoi(const char	*str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char	*s1);
-int		ft_putstr(char	*);
+int		ft_putstr(char	*s);
 int		ft_putnbr(int n);
 int		ft_putnbrbase(int numero, char *base);
 void	ft_putendl_fd(char	*s, int fd);
-int		ft_putchar (int c);
+int		ft_putchar(int c);
 int		ft_printf(char const *cadena, ...);
 char	*ft_itoa(int n);
+int		ft_puthexa(int n);
+int		ft_putadress(void *numero);
 
 #endif

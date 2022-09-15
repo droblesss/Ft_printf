@@ -13,17 +13,16 @@ int	ft_format(va_list print, char format)
         dest += ft_putchar(va_arg(print, int));
     else if (format == 's')
         dest += ft_putstr(va_arg(print, char *));
-    else if (format == 'd')
+    else if (format == 'd'|| format == 'i')
         dest += ft_putnbr(va_arg(print, int));
-    else if (format == 'x')
-        dest += ft_putnbrbase(va_arg(print, int), "0123456789ABCDEF");
     else if (format == 'X')
+        dest += ft_putnbrbase(va_arg(print, int), "0123456789ABCDEF");
+    else if (format == 'x')
         dest += ft_putnbrbase(va_arg(print, int), "0123456789abcdef");
-    else if (format == 'i')
-        dest += ft_putnbr(va_arg(print, int));
     else if (format == 'u')
-        dest += ft_putnbrbase(va_arg(print, int), "914321932");
-
+        dest += ft_putnbrbase(va_arg(print, int), "0123456789");
+    else if (format == 'p')
+            dest += ft_putadress(va_arg(print, void *));
     return (dest);
 
 }
@@ -37,21 +36,25 @@ int ft_printf(char const *cadena, ...)
     contador = 0;
     va_list print;
     va_start (print, cadena); 
-    while(*cadena)
+    while(cadena[contador])
     {
-        /*if (cadena[contador] == '%')*/
-            {   size = size + ft_format(print, cadena[contador +1]);
-                contador++;
-            }
-
+        if (cadena[contador] == '%')
+        {   size = size + ft_format(print, cadena[contador +1]);
+            contador++;
+        }
+        else
+        ft_putchar(cadena[contador]);
+        contador++;
     }
     va_end (print);
     return (size);
 }
-
-int main()
+/*int main()
 {
-    ft_printf("%u", 10^33);
-    printf("%u", 10^33);
+    char *s1;
+    s1 = "hola";
+    ft_printf("%p", s1);
+    write(1, "\n", 1);
+    printf("%p", s1);
     return 0;
-}
+}*/

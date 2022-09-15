@@ -6,14 +6,13 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 18:51:53 by drobles           #+#    #+#             */
-/*   Updated: 2022/09/12 16:56:57 by drobles          ###   ########.fr       */
+/*   Updated: 2022/09/15 12:17:32 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h> 
 #include <ctype.h>
 #include "libftprintf.h"
-
 
 int	ft_tolower(int c)
 {

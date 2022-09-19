@@ -6,7 +6,7 @@
 /*   By: drobles <drobles@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 17:57:20 by drobles           #+#    #+#             */
-/*   Updated: 2022/09/15 16:00:54 by drobles          ###   ########.fr       */
+/*   Updated: 2022/09/19 12:39:09 by drobles          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_putstr(char *s)
 
 	i = 0;
 	if (!s)
-		return(ft_putstr("(null)"));
+		return (ft_putstr("(null)"));
 	else
 	{
 		while (s[i] != '\0')

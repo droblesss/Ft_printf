@@ -1,16 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putadress.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: drobles <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/19 12:23:49 by drobles           #+#    #+#             */
+/*   Updated: 2022/09/19 12:24:20 by drobles          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include <stdio.h>
 #include "libftprintf.h"
 
-unsigned int	ft_putadress(void *numero)
+int	ft_putadress(void *numero)
 {
-	static int	i;
-	unsigned long long			aux;
+	int		i;
+	size_t	aux;
 
 	i = 0;
-	aux = (unsigned long long)numero;
+	aux = (size_t)numero;
 	i = write(1, "0x", 2);
-	i = i + ft_putnbrbase(aux, "0123456789abcdef");
+	i = i + ft_puthexa(aux);
 	return (i);
 }
 // int main()
